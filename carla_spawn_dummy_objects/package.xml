@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>carla_spawn_objects</name>
+  <name>carla_spawn_dummy_objects</name>
   <version>0.0.0</version>
-  <description>The carla_spawn_objects package</description>
+  <description>The carla_spawn_dummy_objects package</description>
   <maintainer email="carla.simulator@gmail.com">CARLA Simulator Team</maintainer>
   <license>MIT</license>
 
