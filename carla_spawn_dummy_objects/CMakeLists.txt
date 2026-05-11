@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(carla_spawn_objects)
+project(carla_spawn_dummy_objects)
 
 find_package(ros_environment REQUIRED)
 set(ROS_VERSION $ENV{ROS_VERSION})
@@ -17,8 +17,8 @@ if(${ROS_VERSION} EQUAL 1)
   catkin_package(CATKIN_DEPENDS rospy)
 
   catkin_install_python(
-    PROGRAMS src/carla_spawn_objects/carla_spawn_objects.py
-    src/carla_spawn_objects/set_initial_pose.py DESTINATION
+    PROGRAMS src/carla_spawn_dummy_objects/carla_spawn_dummy_objects.py
+    src/carla_spawn_dummy_objects/set_initial_pose.py DESTINATION
     ${CATKIN_PACKAGE_BIN_DESTINATION})
 
   install(DIRECTORY launch/
