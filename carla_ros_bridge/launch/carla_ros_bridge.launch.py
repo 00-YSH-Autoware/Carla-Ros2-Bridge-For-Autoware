@@ -53,10 +53,18 @@ def generate_launch_description():
         ),
         launch.actions.DeclareLaunchArgument(
             name='ego_vehicle_role_name',
-            default_value=["hero", "ego_vehicle", "hero0", "hero1", "hero2",
-                           "hero3", "hero4", "hero5", "hero6", "hero7", "hero8", "hero9"],
+        # Changed_2026.05.12_YSH_Role Name Changed 
+            # default_value=["hero", "ego_vehicle", "hero0", "hero1", "hero2",
+            #                "hero3", "hero4", "hero5", "hero6", "hero7", "hero8", "hero9"],
+            default_value=["ego_vehicle", "static", "static_1", "static_2", "static_3"],
             description='Role names to identify ego vehicles. '
         ),
+        # Role _ 2026.05.12 _ YSH_Role Name Changed 
+        # Kind Of Object
+        # 1.ego_vehicle_{num}
+        # 2.static_{num}
+        # 3.dynamic_{num}     
+
         launch_ros.actions.Node(
             package='carla_ros_bridge',
             executable='bridge',
