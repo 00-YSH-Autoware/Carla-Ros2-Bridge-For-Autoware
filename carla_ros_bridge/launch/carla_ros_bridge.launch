@@ -17,7 +17,7 @@
   <!-- set the fixed timestep length -->
   <arg name='fixed_delta_seconds' default='0.05'/>
   
-  <!-- 2026.05.12_YSH_Changed Map  -->
+  <!-- Chnaged_2026.05.12_YSH_Changed Map  -->
   <arg name='town' default='Town01'/>
   <!-- <arg name='town' default='Town01'/> -->
   <!-- enable/disable the registration of all sensors. If disabled, only sensors
@@ -29,10 +29,16 @@
     (the vehicle from CARLA is selected which has the attribute 'role_name' set to this value)
   -->
 
-  <!-- 2026.05.12_YSH_Role Name Changed  -->
+  <!-- Changed_2026.05.12_YSH_Role Name Changed  -->
   <!-- <arg name='ego_vehicle_role_name' default='["hero", "ego_vehicle", "hero0", "hero1", "hero2", "hero3", "hero4", "hero5", "hero6", "hero7", "hero8", "hero9"]'/> -->
-  <arg name='ego_vehicle_role_name' default='["ego_vehicle", "static", "static", "static2", "static3"]'/>
-      
+  <arg name='ego_vehicle_role_name' default='["ego_vehicle", "static", "static_1", "static_2", "static_3"]'/>
+
+  <!-- Role_2026.05.12_YSH_Role Name Changed  -->
+  <!-- Naming Rule of Vehicle
+  1.ego_vehicle_{num}
+  2.static_{num}
+  3.dynamic_{num}     -->
+  
   <node pkg="carla_ros_bridge" name="carla_ros_bridge" type="bridge.py" output="screen" required="true">
     <param name="host" value="$(arg host)" unless="$(eval host == '')"/>
     <param name="port" value="$(arg port)" unless="$(eval port == '')"/>
