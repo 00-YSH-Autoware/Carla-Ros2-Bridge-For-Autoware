@@ -1,5 +1,4 @@
 import os
-import sys
 
 import launch
 import launch_ros.actions
@@ -11,10 +10,10 @@ def generate_launch_description():
         launch.actions.DeclareLaunchArgument(
             name='objects_definition_file',
             default_value=os.path.join(get_package_share_directory(
-                'carla_spawn_objects'), 'config', 'objects.json')
+                'carla_spawn_dummy_objects'), 'config', 'objects.json')
         ),
         launch.actions.DeclareLaunchArgument(
-            name='spawn_point_ego_vehicle',
+            name='spawn_point_obstacle_01',
             default_value='None'
         ),
         launch.actions.DeclareLaunchArgument(
@@ -23,21 +22,15 @@ def generate_launch_description():
         ),
 
         launch_ros.actions.Node(
-            package='carla_spawn_objects',
-            executable='carla_spawn_objects',
-            name='carla_spawn_objects',
+            package='carla_spawn_dummy_objects',
+            executable='carla_spawn_dummy_objects',
+            name='carla_spawn_dummy_objects',
             output='screen',
             emulate_tty=True,
             parameters=[
-                {
-                    'objects_definition_file': launch.substitutions.LaunchConfiguration('objects_definition_file')
-                },
-                {
-                    'spawn_point_ego_vehicle': launch.substitutions.LaunchConfiguration('spawn_point_ego_vehicle')
-                },
-                {
-                    'spawn_sensors_only': launch.substitutions.LaunchConfiguration('spawn_sensors_only')
-                }
+                {'objects_definition_file': launch.substitutions.LaunchConfiguration('objects_definition_file')},
+                {'spawn_point_obstacle_01': launch.substitutions.LaunchConfiguration('spawn_point_obstacle_01')},
+                {'spawn_sensors_only': launch.substitutions.LaunchConfiguration('spawn_sensors_only')},
             ]
         )
     ])

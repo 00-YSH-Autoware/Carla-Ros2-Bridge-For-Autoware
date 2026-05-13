@@ -26,7 +26,8 @@ def generate_launch_description():
         ),
         launch.actions.DeclareLaunchArgument(
             name='synchronous_mode',
-            default_value='True',
+            # default_value='True',
+            default_value='False',
             description='Enable/disable synchronous mode. If enabled, the ROS bridge waits until the expected data is received for all sensors'
         ),
         launch.actions.DeclareLaunchArgument(
@@ -36,19 +37,20 @@ def generate_launch_description():
         ),
         launch.actions.DeclareLaunchArgument(
             name='fixed_delta_seconds',
-            default_value='0.05',
+            # default_value='0.05',
+            default_value='0.0',
             description='Simulation time (delta seconds) between simulation steps'
         ),
         launch.actions.DeclareLaunchArgument(
             name='town',
             # Chnaged_2026.05.12_YSH_Changed Map 
             # default_value='Town01',
-            default_value='Town01',
+            default_value='Town04',
             description='Either use an available CARLA town (eg. "Town01") or an OpenDRIVE file (ending in .xodr)'
         ),
         launch.actions.DeclareLaunchArgument(
             name='register_all_sensors',
-            default_value='True',
+            default_value='False',
             description='Enable/disable the registration of all sensors. If disabled, only sensors spawned by the bridge are registered'
         ),
         launch.actions.DeclareLaunchArgument(

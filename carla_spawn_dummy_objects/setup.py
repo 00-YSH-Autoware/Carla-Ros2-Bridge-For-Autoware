@@ -1,25 +1,14 @@
 """
-Setup for carla_spawn_objects
+Setup for carla_spawn_dummy_objects
 """
 import os
 from glob import glob
 ROS_VERSION = int(os.environ['ROS_VERSION'])
 
-if ROS_VERSION == 1:
-    from distutils.core import setup
-    from catkin_pkg.python_setup import generate_distutils_setup
-
-    d = generate_distutils_setup(
-        packages=['carla_spawn_objects'],
-        package_dir={'': 'src'}
-    )
-
-    setup(**d)
-
-elif ROS_VERSION == 2:
+if ROS_VERSION == 2:
     from setuptools import setup
 
-    package_name = 'carla_spawn_objects'
+    package_name = 'carla_spawn_dummy_objects'
     setup(
         name=package_name,
         version='0.0.0',
@@ -34,15 +23,14 @@ elif ROS_VERSION == 2:
         ],
         install_requires=['setuptools'],
         zip_safe=True,
-        maintainer='CARLA Simulator Team',
-        maintainer_email='carla.simulator@gmail.com',
-        description='CARLA spawn_objects for ROS2 bridge',
+        maintainer='YSH',
+        maintainer_email='yshgit@gmail.com',
+        description='CARLA spawn for dummy obstacle objects',
         license='MIT',
         tests_require=['pytest'],
         entry_points={
             'console_scripts': [
-                'carla_spawn_objects = src.carla_spawn_objects.carla_spawn_objects:main',
-                'set_initial_pose = src.carla_spawn_objects.set_initial_pose:main'
+                'carla_spawn_dummy_objects = src.carla_spawn_dummy_objects.carla_spawn_dummy_objects:main',
             ],
         },
     )
